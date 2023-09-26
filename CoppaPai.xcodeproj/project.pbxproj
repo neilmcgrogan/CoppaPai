@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		AD6649792AC263DF0090E120 /* CoppaPai.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6649782AC263DF0090E120 /* CoppaPai.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD6649802AC265450090E120 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD66497F2AC265450090E120 /* Example.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD6649752AC263DF0090E120 /* CoppaPai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoppaPai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6649782AC263DF0090E120 /* CoppaPai.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoppaPai.h; sourceTree = "<group>"; };
+		AD66497F2AC265450090E120 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6649782AC263DF0090E120 /* CoppaPai.h */,
+				AD66497F2AC265450090E120 /* Example.swift */,
 			);
 			path = CoppaPai;
 			sourceTree = "<group>";
@@ -93,6 +96,7 @@
 				TargetAttributes = {
 					AD6649742AC263DF0090E120 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -129,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6649802AC265450090E120 /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +263,7 @@
 		AD66497D2AC263DF0090E120 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -278,6 +284,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +293,7 @@
 		AD66497E2AC263DF0090E120 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
