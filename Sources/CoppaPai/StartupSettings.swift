@@ -11,7 +11,7 @@ import SwiftUI
 @available(iOS 15.0, *)
 extension View {
     
-    func startUpSettings() -> some View {
+    public func startUpSettings() -> some View {
         self
             .dynamicTypeSize(.medium)
             .preferredColorScheme(.light)
