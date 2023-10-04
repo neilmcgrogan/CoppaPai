@@ -11,7 +11,7 @@ import SwiftUI
 @available(iOS 15.0, *)
 extension View {
     
-    func outlined() -> some View {
+    public func outlined() -> some View {
         self
             .background(LinearGradient(colors: [Color.white.opacity(0.7), Color.white.opacity(0.35)], startPoint: .bottom, endPoint: .top))
             .overlay(
