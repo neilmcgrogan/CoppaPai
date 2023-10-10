@@ -14,7 +14,7 @@ public class UserData: ObservableObject {
         didSet { defaults.set(gamesPlayed, forKey: "games_played") }
     }
     
-    init() {
+    public init() {
         self.gamesPlayed = defaults.object(forKey: "games_played") as? Int ?? 0
     }
 }
