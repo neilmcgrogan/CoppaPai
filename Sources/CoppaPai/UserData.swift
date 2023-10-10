@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 13.0, *)
 public class UserData: ObservableObject {
     
-    @Published var gamesPlayed: Int {
+    @Published public var gamesPlayed: Int {
         didSet { defaults.set(gamesPlayed, forKey: "games_played") }
     }
     
