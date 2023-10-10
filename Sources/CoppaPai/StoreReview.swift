@@ -8,14 +8,12 @@
 import StoreKit
 import SwiftUI
 
-struct StoreReview {
-    func requestReview() {
-        if #available(iOS 14.0, *) {
-            if let scene = UIApplication.shared.currentScene {
-                SKStoreReviewController.requestReview(in: scene)
-            }
-        } else {
-            SKStoreReviewController.requestReview()
+@available(macOS 12.0, *)
+@available(iOS 15.0, *)
+public struct StoreReview {
+    public func requestReview() {
+        if let scene = UIApplication.shared.currentScene {
+            SKStoreReviewController.requestReview(in: scene)
         }
     }
 }
@@ -33,11 +31,17 @@ extension Color {
     static var menuTitle = Color(red: 39/255, green: 36/255, blue: 45/255)
 }
 
-@available(iOS 14.0, *)
+@available(iOS 13.0, *)
+public struct TestView: View {
+    public var body: some View {
+        Text("Test")
+    }
+}
+
+@available(iOS 15.0, *)
 public struct AskForReview: View {
-    let title: String
-    @Binding var askFeedback: Bool
-    let winCriteria: (Int, Int, Int)
+    public let title: String
+    @Binding public var askFeedback: Bool
     var storeReview = StoreReview()
     
     public var body: some View {
@@ -115,10 +119,10 @@ public struct AskForReview: View {
     }
 }
 
-@available(iOS 14.0, *)
+@available(iOS 15.0, *)
 struct AskForReview_Previews: PreviewProvider {
     static var previews: some View {
-        AskForReview(title: "Loving _ game?", askFeedback: .constant(false), winCriteria: (2, 10, 20))
+        AskForReview(title: "Loving _ game?", askFeedback: .constant(false))
             .background(Color.menuTitle)
             .previewLayout(PreviewLayout.sizeThatFits)
             .colorScheme(.dark)
