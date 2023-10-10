@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		AD6649D22AC272F90090E120 /* StartupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6649D12AC272F90090E120 /* StartupSettings.swift */; };
 		AD6649D42AC273FE0090E120 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6649D32AC273FD0090E120 /* Styles.swift */; };
+		AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */; };
 		OBJ_24 /* CoppaPai.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CoppaPai.swift */; };
 		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
@@ -45,10 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD6649CF2AC272D00090E120 /* CoppaPai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CoppaPai.framework; path = /Users/neilmcgrogan/Developer/CoppaPai/build/Debug/CoppaPai.framework; sourceTree = "<absolute>"; };
-		AD6649D02AC272D00090E120 /* CoppaPaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CoppaPaiTests.xctest; path = /Users/neilmcgrogan/Developer/CoppaPai/build/Debug/CoppaPaiTests.xctest; sourceTree = "<absolute>"; };
 		AD6649D12AC272F90090E120 /* StartupSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupSettings.swift; sourceTree = "<group>"; };
 		AD6649D32AC273FD0090E120 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		AD94663C2AD4A48900B98FD9 /* CoppaPai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoppaPai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD94663D2AD4A48900B98FD9 /* CoppaPaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoppaPaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReview.swift; sourceTree = "<group>"; };
 		OBJ_17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_18 /* CoppaPai.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoppaPai.h; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -80,6 +82,8 @@
 				OBJ_17 /* README.md */,
 				OBJ_6 /* Package.swift */,
 				OBJ_18 /* CoppaPai.h */,
+				AD94663C2AD4A48900B98FD9 /* CoppaPai.framework */,
+				AD94663D2AD4A48900B98FD9 /* CoppaPaiTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +100,7 @@
 			children = (
 				OBJ_9 /* CoppaPai.swift */,
 				AD6649D12AC272F90090E120 /* StartupSettings.swift */,
+				AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */,
 				AD6649D32AC273FD0090E120 /* Styles.swift */,
 			);
 			name = CoppaPai;
@@ -118,7 +123,7 @@
 			);
 			name = CoppaPai;
 			productName = CoppaPai;
-			productReference = AD6649CF2AC272D00090E120 /* CoppaPai.framework */;
+			productReference = AD94663C2AD4A48900B98FD9 /* CoppaPai.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		"coppapai::CoppaPaiTests" /* CoppaPaiTests */ = {
@@ -135,7 +140,7 @@
 			);
 			name = CoppaPaiTests;
 			productName = CoppaPaiTests;
-			productReference = AD6649D02AC272D00090E120 /* CoppaPaiTests.xctest */;
+			productReference = AD94663D2AD4A48900B98FD9 /* CoppaPaiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		"coppapai::SwiftPMPackageDescription" /* CoppaPaiPackageDescription */ = {
@@ -189,6 +194,7 @@
 				AD6649D42AC273FE0090E120 /* Styles.swift in Sources */,
 				AD6649D22AC272F90090E120 /* StartupSettings.swift in Sources */,
 				OBJ_24 /* CoppaPai.swift in Sources */,
+				AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

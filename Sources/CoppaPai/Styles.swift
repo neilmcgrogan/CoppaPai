@@ -26,3 +26,11 @@ extension View {
     }
     
 }
+
+struct ScaleButton: ButtonStyle {
+    @available(iOS 13.0, *)
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.90 : 1)
+    }
+}
