@@ -24,6 +24,8 @@
 		AD6649D22AC272F90090E120 /* StartupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6649D12AC272F90090E120 /* StartupSettings.swift */; };
 		AD6649D42AC273FE0090E120 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6649D32AC273FD0090E120 /* Styles.swift */; };
 		AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */; };
+		ADFE435B2AD4DF9A00D55638 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE435A2AD4DF9A00D55638 /* Definitions.swift */; };
+		ADFE435D2AD4DFF100D55638 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE435C2AD4DFF100D55638 /* UserData.swift */; };
 		OBJ_24 /* CoppaPai.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CoppaPai.swift */; };
 		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		AD94663C2AD4A48900B98FD9 /* CoppaPai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoppaPai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD94663D2AD4A48900B98FD9 /* CoppaPaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoppaPaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReview.swift; sourceTree = "<group>"; };
+		ADFE435A2AD4DF9A00D55638 /* Definitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		ADFE435C2AD4DFF100D55638 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		OBJ_17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_18 /* CoppaPai.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoppaPai.h; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				AD6649D12AC272F90090E120 /* StartupSettings.swift */,
 				AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */,
 				AD6649D32AC273FD0090E120 /* Styles.swift */,
+				ADFE435A2AD4DF9A00D55638 /* Definitions.swift */,
+				ADFE435C2AD4DFF100D55638 /* UserData.swift */,
 			);
 			name = CoppaPai;
 			path = Sources/CoppaPai;
@@ -191,9 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				ADFE435D2AD4DFF100D55638 /* UserData.swift in Sources */,
 				AD6649D42AC273FE0090E120 /* Styles.swift in Sources */,
 				AD6649D22AC272F90090E120 /* StartupSettings.swift in Sources */,
 				OBJ_24 /* CoppaPai.swift in Sources */,
+				ADFE435B2AD4DF9A00D55638 /* Definitions.swift in Sources */,
 				AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
