@@ -47,7 +47,7 @@ public struct AskForReview: View {
     @Binding public var askFeedback: Bool
     var storeReview = StoreReview()
     
-    init(title: String, askFeedback: Binding<Bool>) {
+    public init(title: String, askFeedback: Binding<Bool>) {
         self.title = title
         self._askFeedback = askFeedback
     }
@@ -61,21 +61,11 @@ public struct AskForReview: View {
                     .bold()
                     .font(.title)
                 HStack {
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
+                    ForEach(1...5, id: \.self) { _ in
+                        Image("star")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
                 }
                 
                 Text("Leave us a review?")
