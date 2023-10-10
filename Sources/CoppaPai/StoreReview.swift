@@ -33,6 +33,9 @@ extension Color {
 
 @available(iOS 13.0, *)
 public struct TestView: View {
+    
+    public init() {}
+    
     public var body: some View {
         Text("Test")
     }
@@ -43,6 +46,11 @@ public struct AskForReview: View {
     public let title: String
     @Binding public var askFeedback: Bool
     var storeReview = StoreReview()
+    
+    init(title: String, askFeedback: Binding<Bool>) {
+        self.title = title
+        self._askFeedback = askFeedback
+    }
     
     public var body: some View {
         ZStack {
