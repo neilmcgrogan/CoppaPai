@@ -1,16 +1,14 @@
 //
 //  Styles.swift
-//  CoppaPai
+//  Lapala
 //
-//  Created by Neil McGrogan on 9/25/23.
+//  Created by Neil McGrogan on 10/11/23.
 //
 
 import SwiftUI
 
-@available(macOS 10.15, *)
-@available(iOS 15.0, *)
+@available(iOS 14.0, *)
 extension View {
-    
     public func outlined() -> some View {
         self
             .background(LinearGradient(colors: [Color.white.opacity(0.7), Color.white.opacity(0.35)], startPoint: .bottom, endPoint: .top))
@@ -25,6 +23,24 @@ extension View {
             .shadow(color: .black.opacity(0.14), radius: 10, x: 0, y: 12.5)
     }
     
+    public func button(selectable: Bool) -> some View {
+        self
+            .font(.title3)
+            .foregroundColor(selectable ? .black : .gray)
+            .padding(7.5)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(selectable ? .black : .gray, lineWidth: 2)
+            )
+    }
+    
+    public func titleButton() -> some View {
+        self
+            .font(.title)
+            .shadow(radius: 5)
+            .foregroundColor(.white)
+            .padding(.horizontal)
+    }
 }
 
 struct ScaleButton: ButtonStyle {

@@ -9,3 +9,4 @@ import SwiftUI
 
 public let screen = UIScreen.main.bounds
 public let defaults = UserDefaults.standard
+
