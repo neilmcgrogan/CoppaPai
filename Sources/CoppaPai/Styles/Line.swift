@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Line: Shape {
+@available(iOS 13.0, *)
+public struct Line: Shape {
     var from: CGPoint
     var to: CGPoint
     /*var animatableData: AnimatablePair<CGPoint, CGPoint> {
@@ -18,7 +19,6 @@ struct Line: Shape {
      }
      }*/
     
-    @available(iOS 13.0, *)
     public func path(in rect: CGRect) -> Path {
         Path { p in
             p.move(to: self.from)
