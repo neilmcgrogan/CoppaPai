@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		AD3ED2182AE9CF8A00997035 /* LapalaGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */; };
 		AD6649D22AC272F90090E120 /* StartupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6649D12AC272F90090E120 /* StartupSettings.swift */; };
 		AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */; };
 		ADB2235D2AE86B0A00FA3681 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2235C2AE86B0A00FA3681 /* Line.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaGameModel.swift; sourceTree = "<group>"; };
 		AD6649D12AC272F90090E120 /* StartupSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupSettings.swift; sourceTree = "<group>"; };
 		AD94663C2AD4A48900B98FD9 /* CoppaPai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoppaPai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD94663D2AD4A48900B98FD9 /* CoppaPaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoppaPaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB2236E2AE86CBE00FA3681 /* LapalaDefinitions.swift */,
+				AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */,
 				ADB223712AE8715E00FA3681 /* LapalaGameView.swift */,
 			);
 			path = Lapala;
@@ -256,6 +259,7 @@
 				ADB223652AE86B1A00FA3681 /* Shine.swift in Sources */,
 				ADB2235F2AE86B0E00FA3681 /* Styles.swift in Sources */,
 				OBJ_24 /* CoppaPai.swift in Sources */,
+				AD3ED2182AE9CF8A00997035 /* LapalaGameModel.swift in Sources */,
 				ADB223672AE86B1E00FA3681 /* AnimatingLine.swift in Sources */,
 				ADFE435B2AD4DF9A00D55638 /* Definitions.swift in Sources */,
 				ADB2236B2AE86B2900FA3681 /* Extension+Color.swift in Sources */,
