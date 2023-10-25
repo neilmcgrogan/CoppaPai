@@ -38,7 +38,7 @@ struct LapalaRestartView: View {
 
 
 @available(iOS 15.0, *)
-struct LapalaRestartView_Previews: PreviewProvider {
+struct RestartView_Previews: PreviewProvider {
     static var previews: some View {
         LapalaRestartView(game: LapalaGameModel())
             .environmentObject(LapalaGameModel())

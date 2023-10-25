@@ -193,6 +193,8 @@ public class LapalaGameModel: ObservableObject {
                 char[1] = "U"
             }
         }
+        
+        self.gamesPlayed += 1
     }
     
     func containsLetter(letter: String) -> Bool {
