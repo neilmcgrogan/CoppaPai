@@ -35,7 +35,7 @@ public class LapalaGameModel: ObservableObject {
         }
     }
     @Published var guessed: String = ""
-    @Published var words: [String] = [] {
+    @Published public var words: [String] = [] {
         didSet{
             var allLetters: [Character] = []
             for word in words {
