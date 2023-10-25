@@ -12,7 +12,7 @@ enum GameStatus {
 }
 
 @available(iOS 15.0, *)
-class Game: ObservableObject {
+public class Game: ObservableObject {
     
     @Published var scoreAnimation = false {
         didSet{
