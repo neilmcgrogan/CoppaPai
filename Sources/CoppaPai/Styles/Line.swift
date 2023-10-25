@@ -19,6 +19,11 @@ public struct Line: Shape {
      }
      }*/
     
+    public init(from: CGPoint, to: CGPoint) {
+        self.from = from
+        self.to = to
+    }
+    
     public func path(in rect: CGRect) -> Path {
         Path { p in
             p.move(to: self.from)
