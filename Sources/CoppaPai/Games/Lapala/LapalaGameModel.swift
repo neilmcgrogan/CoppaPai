@@ -12,7 +12,7 @@ enum GameStatus {
 }
 
 @available(iOS 15.0, *)
-public class Game: ObservableObject {
+public class LapalaGameModel: ObservableObject {
     
     @Published var scoreAnimation = false {
         didSet{
@@ -66,7 +66,7 @@ public class Game: ObservableObject {
         didSet { defaults.set(gamesPlayed, forKey: "games_played") }
     }
     
-    init() {
+    public init() {
         self.winStreak = defaults.object(forKey: "winStreak") as? Int ?? 0
         self.gamesPlayed = defaults.object(forKey: "games_played") as? Int ?? 0
         self.getLetters()
