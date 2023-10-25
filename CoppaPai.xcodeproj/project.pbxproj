@@ -236,6 +236,8 @@
 				en,
 			);
 			mainGroup = OBJ_5;
+			packageReferences = (
+			);
 			productRefGroup = OBJ_5;
 			projectDirPath = "";
 			projectRoot = "";

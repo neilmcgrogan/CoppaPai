@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum GameStatus {
+public enum GameStatus {
     case playing, notPlaying, finished
 }
 
@@ -54,16 +54,24 @@ public class LapalaGameModel: ObservableObject {
             }
         }
     }
-    @Published var status: GameStatus = .notPlaying
+    @Published public var status: GameStatus = .notPlaying
     @Published var progress: Double = 0
     @Published var winStreak: Int {
         didSet {
             defaults.set(winStreak, forKey: "winStreak")
         }
     }
-    
     @Published public var gamesPlayed: Int {
         didSet { defaults.set(gamesPlayed, forKey: "games_played") }
+    }
+    @Published public var showInterstitialAd: Bool = false {
+        didSet{
+            if showInterstitialAd {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.showInterstitialAd = false
+                }
+            }
+        }
     }
     
     public init() {
@@ -80,6 +88,7 @@ public class LapalaGameModel: ObservableObject {
         withAnimation() {
             self.status = .playing
         }
+        self.showInterstitialAd = true
     }
     
     func restart() {
