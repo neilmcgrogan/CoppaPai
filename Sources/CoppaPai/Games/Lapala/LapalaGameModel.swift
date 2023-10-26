@@ -77,7 +77,9 @@ public class LapalaGameModel: ObservableObject {
     public init() {
         self.winStreak = defaults.object(forKey: "winStreak") as? Int ?? 0
         self.gamesPlayed = defaults.object(forKey: "games_played") as? Int ?? 0
+        
         self.getLetters()
+        self.gamesPlayed += 1
     }
     
     func gameRestart() {
@@ -89,6 +91,7 @@ public class LapalaGameModel: ObservableObject {
             self.status = .playing
         }
         self.showInterstitialAd = true
+        self.gamesPlayed += 1
     }
     
     func restart() {
@@ -193,8 +196,6 @@ public class LapalaGameModel: ObservableObject {
                 char[1] = "U"
             }
         }
-        
-        self.gamesPlayed += 1
     }
     
     func containsLetter(letter: String) -> Bool {
