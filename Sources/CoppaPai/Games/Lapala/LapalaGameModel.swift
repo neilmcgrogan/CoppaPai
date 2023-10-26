@@ -79,7 +79,6 @@ public class LapalaGameModel: ObservableObject {
         self.gamesPlayed = defaults.object(forKey: "games_played") as? Int ?? 0
         
         self.getLetters()
-        self.gamesPlayed += 1
     }
     
     func gameRestart() {
