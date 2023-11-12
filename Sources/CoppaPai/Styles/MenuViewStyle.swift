@@ -18,12 +18,12 @@ extension View {
 }
 
 @available(iOS 13.0, *)
-struct BlurView: UIViewRepresentable {
-    typealias UIViewType = UIView
+public struct BlurView: UIViewRepresentable {
+    public typealias UIViewType = UIView
     
     var style: UIBlurEffect.Style
     
-    func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
+    public func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
         let view = UIView(frame: CGRect.zero)
         view.backgroundColor = .clear
         
@@ -40,7 +40,7 @@ struct BlurView: UIViewRepresentable {
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BlurView>) {
+    public func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BlurView>) {
         // useful for animations when our views change
     }
 }
