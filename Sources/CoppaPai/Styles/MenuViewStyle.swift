@@ -23,6 +23,10 @@ public struct BlurView: UIViewRepresentable {
     
     var style: UIBlurEffect.Style
     
+    public init(style: UIBlurEffect.Style) {
+        self.style = style
+    }
+    
     public func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
         let view = UIView(frame: CGRect.zero)
         view.backgroundColor = .clear
@@ -47,5 +51,5 @@ public struct BlurView: UIViewRepresentable {
 
 @available(iOS 13.0, *)
 extension Color {
-    static let metalBlue = Color(red: 169 / 255, green: 187 / 255, blue: 212 / 255)
+    public static let metalBlue = Color(red: 169 / 255, green: 187 / 255, blue: 212 / 255)
 }
