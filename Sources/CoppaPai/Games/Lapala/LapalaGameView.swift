@@ -222,3 +222,13 @@ struct BackgroundView: View {
             .offset(y: 15)
     }
 }
+
+@available(iOS 16.0, *)
+struct LapalaGameView_Previews: PreviewProvider {
+    static var previews: some View {
+        LapalaGameView(askFeedback: .constant(false))
+            .environmentObject(LapalaGameModel())
+            .background(Color.primary_pink)
+    }
+}
+

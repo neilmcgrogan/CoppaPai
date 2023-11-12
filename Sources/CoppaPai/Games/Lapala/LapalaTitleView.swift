@@ -31,3 +31,4 @@ struct LapalaTitleView: View {
         .font(.largeTitle)
     }
 }
+

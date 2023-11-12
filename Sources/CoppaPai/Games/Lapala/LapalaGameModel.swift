@@ -75,6 +75,8 @@ public class LapalaGameModel: ObservableObject {
     }
     
     public init() {
+        
+        print("working")
         self.winStreak = defaults.object(forKey: "winStreak") as? Int ?? 0
         self.gamesPlayed = defaults.object(forKey: "games_played") as? Int ?? 0
         
@@ -127,6 +129,7 @@ public class LapalaGameModel: ObservableObject {
                 do {
                     let data = try String(contentsOfFile: path, encoding: .utf8)
                     if data.contains("\n\(guess.lowercased())\n") {
+                        print("working3")
                         guessed = guess
                         self.scoreAnimation = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + (delayConst * Double(guess.count))) {
