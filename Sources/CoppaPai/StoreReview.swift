@@ -56,62 +56,68 @@ public struct AskForReview: View {
         ZStack {
             Color.gray.opacity(0.01)
             
-            VStack {
-                Text("\(title)")
+            VStack(spacing: 20) {
+                Text("Love Dorble?")
                     .bold()
                     .font(.title)
                 HStack {
-                    ForEach(1...5, id: \.self) { _ in
-                        Image("star")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }
+                    Image("star")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    Image("star")
+                        .resizable()
+                        .frame(width: 22.5, height: 22.5)
+                        .offset(y: -2.5)
+                    Image("star")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .offset(y: -5)
+                    Image("star")
+                        .resizable()
+                        .frame(width: 22.5, height: 22.5)
+                        .offset(y: -2.5)
+                    Image("star")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                 }
                 
-                Text("Leave us a review?")
+                Text("Help us with a review")
                     .bold()
-                    .font(.title3)
+                    .font(.body)
                 Spacer()
                 HStack {
-                    Spacer()
-                    Button("No") {
+                    Button(action: {
                         askFeedback.toggle()
+                    }) {
+                        Text("No")
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 30)
+                            .menuViewStyle()
+                            .padding(1)
+                            .background(Color.gray.cornerRadius(30))
+                            .frame(maxWidth: .infinity)
                     }.buttonStyle(ScaleButton())
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)
-                    .background(Color.red)
-                    .cornerRadius(20)
-                    .padding(1.5)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .padding(1.5)
-                    Spacer()
-                    Button("Yes") {
+                    
+                    Button(action: {
                         storeReview.requestReview()
                         askFeedback.toggle()
-                        storeReview.requestReview()
+                    }) {
+                        Text("Yes")
+                            .fontWeight(.medium)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 30)
+                            .padding(1)
+                            .background(Color.green.cornerRadius(30))
+                            .springEffect(animationTrigger: .constant(true))
+                            .frame(maxWidth: .infinity)
                     }.buttonStyle(ScaleButton())
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)
-                    .background(Color.green)
-                    .cornerRadius(20)
-                    .padding(1.5)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .padding(1.5)
-                    Spacer()
                 }
                 .font(.title2)
             }
             .foregroundColor(Color.white)
             .padding()
-            .frame(width: 230, height: 225)
-            .background(
-                Color.menuTitle
-                    .frame(width: 230, height: 225)
-                    .cornerRadius(10)
-                    .shadow(color: Color.gray, radius: 2)
-            )
+            .frame(width: 275, height: 275)
+            .menuViewStyle()
         }
         .transition(.opacity)
     }
