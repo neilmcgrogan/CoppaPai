@@ -57,7 +57,7 @@ public struct AskForReview: View {
             Color.gray.opacity(0.01)
             
             VStack(spacing: 20) {
-                Text("Love Dorble?")
+                Text(title)
                     .bold()
                     .font(.title)
                 HStack {
