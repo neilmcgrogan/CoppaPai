@@ -23,6 +23,25 @@ extension View {
             .shadow(color: .black.opacity(0.14), radius: 10, x: 0, y: 12.5)
     }
     
+    public func sectionTitle() -> some View {
+        self
+            .font(.headline)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading, 16)
+            .padding(.bottom, -4)
+    }
+    
+    public func onBackSwipe(perform action: @escaping () -> Void) -> some View {
+        gesture(
+            DragGesture()
+                .onEnded({ value in
+                    if value.startLocation.x < 50 && value.translation.width > 80 {
+                        action()
+                    }
+                })
+        )
+    }
+    
     public func button(selectable: Bool) -> some View {
         self
             .font(.title3)
