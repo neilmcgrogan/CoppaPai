@@ -114,9 +114,8 @@ public struct AskForReview: View {
                 }
                 .font(.title2)
             }
-            .foregroundColor(Color.white)
             .padding()
-            .frame(width: 275, height: 275)
+            .frame(width: 285, height: 285)
             .menuViewStyle()
         }
         .transition(.opacity)
