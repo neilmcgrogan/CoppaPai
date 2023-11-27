@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-public enum GameStatus {
-    case playing, notPlaying, finished
-}
+
 
 @available(iOS 15.0, *)
 public class LapalaGameModel: ObservableObject {
