@@ -100,9 +100,7 @@ extension LapalaGameView {
                 }
                 
                 Button(action: {
-                    if game.guess.count > 2 {
-                        game.enter()
-                    }
+                    if game.guess.count > 2 { game.enter() }
                 }) {
                     Text("Enter")
                         .button(selectable: game.guess.count > 2 ? true : false)

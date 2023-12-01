@@ -129,6 +129,7 @@ public class LapalaGameModel: ObservableObject {
                     if data.contains("\n\(guess.lowercased())\n") {
                         print("working3")
                         guessed = guess
+                        guess = ""
                         self.scoreAnimation = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + (delayConst * Double(guess.count))) {
                             self.words.append(self.guessed)
