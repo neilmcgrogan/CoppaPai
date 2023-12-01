@@ -8,6 +8,7 @@
 import SwiftUI
 
 public let width = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? UIScreen.main.bounds.width : UIScreen.main.bounds.height
+public let startedInLandscape = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? false : true
 // No longer in use
 //public let screen = UIScreen.main.bounds
 
