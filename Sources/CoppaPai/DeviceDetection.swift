@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+public let width = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? UIScreen.main.bounds.width : UIScreen.main.bounds.height
+// No longer in use
+//public let screen = UIScreen.main.bounds
+
 public func isIPad() -> Bool {
     if UIDevice.current.userInterfaceIdiom == .pad {
         return true

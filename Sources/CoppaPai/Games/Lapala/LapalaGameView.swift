@@ -66,7 +66,7 @@ extension LapalaGameView {
                 .foregroundColor(.black)
                 .bold()
                 .shake(self.$game.incorrectGuess)
-            Color.black.frame(width: screen.width * 0.5, height: 5)
+            Color.black.frame(width: width * 0.5, height: 5)
             Text("Try to solve in 6 words")
                 .font(.body)
             
@@ -111,7 +111,7 @@ extension LapalaGameView {
             
             ProgressView("", value: game.progress, total: 1)
                 .accentColor(Color.black)
-                .frame(width: screen.width * 0.75)
+                .frame(width: width * 0.75)
         }
         .scaleEffect(game.status == .finished ? 0 : 1)
     }
@@ -143,7 +143,7 @@ extension LapalaGameView {
             }
         }
         .padding(25)
-        .frame(width: screen.width * 0.75, height: screen.width * 0.75)
+        .frame(width: width * 0.75, height: width * 0.75)
         .scaleEffect(game.scoreAnimation ? 0.95 : 1.0)
         .transition(.scale)
     }
@@ -202,7 +202,7 @@ extension LapalaGameView {
             }
         }
         .padding(25)
-        .frame(width: screen.width * 0.75, height: screen.width * 0.75)
+        .frame(width: width * 0.75, height: width * 0.75)
         .scaleEffect(game.scoreAnimation ? 0.95 : 1.0)
         .transition(.scale)
     }
