@@ -16,6 +16,7 @@ struct LapalaRestartView: View {
             Text("Completed!")
                 .font(.title)
                 .bold()
+                .padding(.horizontal, 25)
             Text("in \(game.words.count) words")
                 .font(.body)
                 .foregroundStyle(Color.gray)
