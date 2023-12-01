@@ -222,7 +222,7 @@ public class LapalaGameModel: ObservableObject {
     /// Find where it is on the array, determine if it is
     func validateMove(candidate: Int) {
         let last = guess.last ?? String.Element(" ")
-        if char[candidate] == String(last) {
+        if char[candidate] == String(last) && guess.count > 1 {
             guess.removeLast()
         } else {
             switch candidate {
