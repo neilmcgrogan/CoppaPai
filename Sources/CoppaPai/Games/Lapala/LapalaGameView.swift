@@ -43,6 +43,7 @@ public struct LapalaGameView: View {
         }
         .bold()
         .font(.largeTitle)
+        .frame(width: width)
     }
 }
 
