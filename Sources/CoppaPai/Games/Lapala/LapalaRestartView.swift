@@ -22,10 +22,11 @@ struct LapalaRestartView: View {
                 .fontWeight(.light)
             Image(systemName: "play.fill")
                 .font(.largeTitle)
+                .padding(35)
+                .springEffect(animationTrigger: .constant(true))
             Text("Play again")
                 .font(.title)
                 .button(selectable: true)
-                .padding(20)
         }
         .padding()
         .background(Color.primary_pink)
