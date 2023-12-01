@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+private let localHeight = UIScreen.main.bounds.height
+
 @available(iOS 16.0, *)
 public struct LapalaGameView: View {
     @EnvironmentObject var game: LapalaGameModel
     
     @Binding public var askFeedback: Bool
+    
+    @State private var viewState = CGSize.zero
     
     public init(askFeedback: Binding<Bool>) {
         self._askFeedback = askFeedback
@@ -33,14 +37,16 @@ public struct LapalaGameView: View {
                 
                 alertsSection
                 
-                if game.status == .finished {
-                    Button(action: {
-                        game.gameRestart()
-                    }) {
-                        LapalaRestartView(game: game)
-                    }
-                    .foregroundColor(.black)
+                Button(action: {
+                    game.gameRestart()
+                }) {
+                    LapalaRestartView(game: game)
+                        .background(Color.black.opacity(0.001))
+                        .offset(y: game.status == .finished ? 0 : 2*localHeight)
+                        .offset(y: viewState.height)
+                        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: game.status == .finished)
                 }
+                .foregroundColor(.black)
             }
         }
         .bold()

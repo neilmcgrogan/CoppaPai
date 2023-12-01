@@ -12,27 +12,24 @@ struct LapalaRestartView: View {
     @StateObject var game: LapalaGameModel
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 30) {
             Text("Completed!")
                 .font(.title)
+                .bold()
             Text("in \(game.words.count) words")
                 .font(.body)
-            Spacer()
+                .foregroundStyle(Color.gray)
             Image(systemName: "play.fill")
                 .font(.largeTitle)
-            Spacer()
             Text("Play again")
                 .font(.title)
+                .button(selectable: true)
+                .padding()
         }
-        .foregroundColor(.white)
-        .padding(20)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.primary_pink.cornerRadius(50))
-        .shineEffect(animationTrigger: .constant(true))
-        .springEffect(animationTrigger: .constant(true))
-        .shadow(radius: 20)
-        .padding(50)
-        .padding(.vertical, 75)
+        .padding()
+        .background(Color.primary_pink)
+        .menuViewStyle()
+        .padding()
     }
 }
 
