@@ -21,7 +21,7 @@ public struct LapalaGameView: View {
         self._askFeedback = askFeedback
     }
     
-    let localWidth = startedInLandscape ? width * 0.80 : width
+    let localWidth = isIPad() ? (startedInLandscape ? width * 0.50 : width * 0.60) : width
     
     public var body: some View {
         ZStack {
