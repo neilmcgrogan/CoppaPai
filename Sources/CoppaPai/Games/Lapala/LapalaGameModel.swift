@@ -71,6 +71,7 @@ public class LapalaGameModel: ObservableObject {
             }
         }
     }
+    @Published var entered: Bool = false
     
     public init() {
         
@@ -123,24 +124,29 @@ public class LapalaGameModel: ObservableObject {
     
     func enter() {
         if guess.count > 2 {
+            self.entered = true
+            
             if let path = Bundle.main.path(forResource: "words_all", ofType: "txt") {
                 do {
                     let data = try String(contentsOfFile: path, encoding: .utf8)
                     if data.contains("\n\(guess.lowercased())\n") {
                         print("working3")
                         guessed = guess
-                        guess = ""
                         self.scoreAnimation = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + (delayConst * Double(guessed.count))) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + (delayConst * Double(guess.count))) {
                             self.words.append(self.guessed)
                             self.guess = String(self.words.last?.suffix(1) ?? "")
                             self.guessed = String(self.words.last?.suffix(1) ?? "")
+                            
+                            self.entered = false
                         }
                     } else {
                         print("word not in bank")
                         withAnimation() {
                             incorrectGuess = true
                         }
+                        
+                        self.entered = false
                     }
                 } catch {
                     print(error)
