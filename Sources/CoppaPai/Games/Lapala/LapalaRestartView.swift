@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
+@available(iOS 16.0, *)
 struct LapalaRestartView: View {
     @StateObject var game: LapalaGameModel
     
@@ -19,12 +19,13 @@ struct LapalaRestartView: View {
             Text("in \(game.words.count) words")
                 .font(.body)
                 .foregroundStyle(Color.gray)
+                .fontWeight(.light)
             Image(systemName: "play.fill")
                 .font(.largeTitle)
             Text("Play again")
                 .font(.title)
                 .button(selectable: true)
-                .padding()
+                .padding(20)
         }
         .padding()
         .background(Color.primary_pink)
@@ -34,7 +35,7 @@ struct LapalaRestartView: View {
 }
 
 
-@available(iOS 15.0, *)
+@available(iOS 16.0, *)
 struct RestartView_Previews: PreviewProvider {
     static var previews: some View {
         LapalaRestartView(game: LapalaGameModel())
