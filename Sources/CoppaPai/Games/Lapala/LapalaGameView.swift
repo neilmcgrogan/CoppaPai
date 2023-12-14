@@ -37,16 +37,12 @@ public struct LapalaGameView: View {
                 
                 alertsSection
                 
-                Button(action: {
-                    game.gameRestart()
-                }) {
-                    LapalaRestartView(game: game)
-                        .background(Color.black.opacity(0.001))
-                        .offset(y: game.status == .finished ? 0 : 2*localHeight)
-                        .offset(y: viewState.height)
-                        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: game.status == .finished)
-                }
-                .foregroundColor(.black)
+                LapalaRestartView(game: game)
+                    .background(Color.black.opacity(0.001))
+                    .offset(y: game.status == .finished ? 0 : 2*localHeight)
+                    .offset(y: viewState.height)
+                    .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: game.status == .finished)
+                    .foregroundColor(.black)
             }
         }
         .bold()

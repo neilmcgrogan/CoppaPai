@@ -16,18 +16,27 @@ struct LapalaRestartView: View {
             Text("Completed!")
                 .font(.title)
                 .bold()
-                .padding(.horizontal, 25)
+                .padding(.horizontal, 50)
             Text("in \(game.words.count) words")
-                .font(.body)
-                .foregroundStyle(Color.gray)
+                .font(.subheadline)
+                .foregroundStyle(Color.dark_gray)
                 .fontWeight(.light)
-            Image(systemName: "play.fill")
-                .font(.largeTitle)
-                .padding(35)
-                .springEffect(animationTrigger: .constant(true))
-            Text("Play again")
-                .font(.title)
-                .button(selectable: true)
+            Button(action: {
+                game.gameRestart()
+            }) {
+                Image(systemName: "play.fill")
+                    .font(.largeTitle)
+                    .padding(35)
+                    .springEffect(animationTrigger: .constant(true))
+                    .foregroundColor(Color.black)
+            }
+            Button(action: {
+                game.gameRestart()
+            }) {
+                Text("Play again")
+                    .font(.title)
+                    .button(selectable: true)
+            }
         }
         .padding()
         .background(Color.primary_pink)
