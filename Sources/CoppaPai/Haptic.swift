@@ -8,14 +8,13 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
-public struct Response {
-    public func softHaptic() {
-        let impactMed = UIImpactFeedbackGenerator(style: .soft)
-        impactMed.impactOccurred()
-    }
-    
-    public func heavyHaptic() {
-        let impactMed = UIImpactFeedbackGenerator(style: .medium)
-        impactMed.impactOccurred()
-    }
+public func softHaptic() {
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
+    impactMed.impactOccurred()
+}
+
+@available(iOS 13.0, *)
+public func heavyHaptic() {
+    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+    impactMed.impactOccurred()
 }
