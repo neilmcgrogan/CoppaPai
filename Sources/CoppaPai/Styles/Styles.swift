@@ -57,7 +57,7 @@ extension View {
         self
             .font(.title)
             .shadow(radius: 5)
-            .foregroundColor(.white)
+            .foregroundColor(Color.primary)
             .padding(.horizontal)
     }
 }
