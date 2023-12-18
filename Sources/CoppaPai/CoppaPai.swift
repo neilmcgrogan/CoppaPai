@@ -20,7 +20,5 @@ extension View {
         self
             .buttonStyle(PlainButtonStyle())
             .dynamicTypeSize(.medium)
-            .preferredColorScheme(.light)
     }
-
 }
