@@ -45,11 +45,11 @@ extension View {
     public func button(selectable: Bool) -> some View {
         self
             .font(.title3)
-            .foregroundColor(selectable ? .primary : .gray)
+            .foregroundColor(selectable ? Color.primary : Color.gray)
             .padding(7.5)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(selectable ? .black : .gray, lineWidth: 2)
+                    .stroke(selectable ? Color.primary : Color.gray, lineWidth: 2)
             )
     }
     
