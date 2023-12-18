@@ -45,7 +45,7 @@ extension View {
     public func button(selectable: Bool) -> some View {
         self
             .font(.title3)
-            .foregroundColor(selectable ? .black : .gray)
+            .foregroundColor(selectable ? .primary : .gray)
             .padding(7.5)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
