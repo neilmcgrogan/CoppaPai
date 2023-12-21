@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import UIKit
 
-@available(iOS 14.0, *)
+@available(iOS 16.0, *)
 extension View {
     public func outlined() -> some View {
         self
@@ -40,6 +41,17 @@ extension View {
                     }
                 })
         )
+    }
+    
+    public func defaultPopUp() -> some View {
+        self
+            .foregroundColor(Color(UIColor.systemBackground))
+            .font(.title2)
+            .bold()
+            .padding()
+            .padding(.horizontal, 5)
+            .background(Color.primary)
+            .cornerRadius(20)
     }
     
     public func button(selectable: Bool) -> some View {
