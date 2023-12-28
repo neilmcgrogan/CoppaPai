@@ -27,6 +27,7 @@
 		AD3ED2222AE9D90000997035 /* LapalaTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED2212AE9D90000997035 /* LapalaTitleView.swift */; };
 		AD485DE22B14223A0047CAE8 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD485DE12B14223A0047CAE8 /* GameStatus.swift */; };
 		AD485DEA2B1462D60047CAE8 /* DeviceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD485DE92B1462D60047CAE8 /* DeviceDetection.swift */; };
+		AD4E110F2B3D91EB00CA1004 /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E110E2B3D91EB00CA1004 /* Confetti.swift */; };
 		AD934D8C2B2A8B730080A354 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD934D8B2B2A8B730080A354 /* Haptic.swift */; };
 		AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94663E2AD4CDFB00B98FD9 /* StoreReview.swift */; };
 		ADB2235D2AE86B0A00FA3681 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2235C2AE86B0A00FA3681 /* Line.swift */; };
@@ -69,6 +70,7 @@
 		AD3ED2212AE9D90000997035 /* LapalaTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaTitleView.swift; sourceTree = "<group>"; };
 		AD485DE12B14223A0047CAE8 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		AD485DE92B1462D60047CAE8 /* DeviceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetection.swift; sourceTree = "<group>"; };
+		AD4E110E2B3D91EB00CA1004 /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		AD934D8B2B2A8B730080A354 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		AD94663C2AD4A48900B98FD9 /* CoppaPai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoppaPai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD94663D2AD4A48900B98FD9 /* CoppaPaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoppaPaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 			children = (
 				ADB2235C2AE86B0A00FA3681 /* Line.swift */,
 				ADB2235E2AE86B0E00FA3681 /* Styles.swift */,
+				AD4E110E2B3D91EB00CA1004 /* Confetti.swift */,
 				AD22C8CF2B0154F900DA3632 /* MenuViewStyle.swift */,
 				ADB223602AE86B1100FA3681 /* Spring.swift */,
 				ADB223622AE86B1500FA3681 /* Shake.swift */,
@@ -279,6 +282,7 @@
 				AD934D8C2B2A8B730080A354 /* Haptic.swift in Sources */,
 				AD3ED2202AE9D8EC00997035 /* LapalaRestartView.swift in Sources */,
 				AD3ED2182AE9CF8A00997035 /* LapalaGameModel.swift in Sources */,
+				AD4E110F2B3D91EB00CA1004 /* Confetti.swift in Sources */,
 				ADB223672AE86B1E00FA3681 /* AnimatingLine.swift in Sources */,
 				ADFE435B2AD4DF9A00D55638 /* Definitions.swift in Sources */,
 				AD3ED2222AE9D90000997035 /* LapalaTitleView.swift in Sources */,
