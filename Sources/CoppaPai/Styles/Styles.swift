@@ -9,16 +9,19 @@ import SwiftUI
 import UIKit
 
 @available(iOS 16.0, *)
+let drkColor = Color(red: 25/255, green: 25/255, blue: 25/255)
+
+@available(iOS 16.0, *)
 extension View {
     public func outlined(dark: Bool) -> some View {
         if dark {
             self
-                .background(LinearGradient(colors: [Color.gray.opacity(0.80), Color.black], startPoint: .bottom, endPoint: .top))
+                .background(LinearGradient(colors: [drkColor, drkColor], startPoint: .bottom, endPoint: .top))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .padding(.horizontal, 16)
                 .padding(.vertical, 16)
-                .shadow(color: .white.opacity(0.1), radius: 80, x: 0, y: 100)
-                .shadow(color: .white.opacity(0.14), radius: 10, x: 0, y: 12.5)
+                .shadow(color: .white.opacity(0.05), radius: 80, x: 0, y: 100)
+                .shadow(color: .white.opacity(0.07), radius: 10, x: 0, y: 12.5)
         } else {
             self
                 .background(LinearGradient(colors: [Color.white.opacity(0.7), Color.white.opacity(0.35)], startPoint: .bottom, endPoint: .top))
