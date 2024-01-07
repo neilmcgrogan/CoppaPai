@@ -13,7 +13,7 @@ extension View {
     public func outlined(dark: Bool) -> some View {
         if dark {
             self
-                .background(LinearGradient(colors: [Color.gray.opacity(0.80), Color.gray.opacity(0.35)], startPoint: .bottom, endPoint: .top))
+                .background(LinearGradient(colors: [Color.gray.opacity(0.80), Color.black], startPoint: .bottom, endPoint: .top))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .padding(.horizontal, 16)
                 .padding(.vertical, 16)
