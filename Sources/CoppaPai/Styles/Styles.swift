@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 @available(iOS 16.0, *)
-let drkColor = Color(red: 25/255, green: 25/255, blue: 25/255)
+let drkColor = Color(red: 46/255, green: 46/255, blue: 46/255)
 
 @available(iOS 16.0, *)
 extension View {
