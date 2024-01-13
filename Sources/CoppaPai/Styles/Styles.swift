@@ -14,23 +14,13 @@ let drkColor = Color(red: 46/255, green: 46/255, blue: 46/255)
 @available(iOS 16.0, *)
 extension View {
     public func outlined(dark: Bool) -> some View {
-        if dark {
-            self
-                .background(LinearGradient(colors: [drkColor, drkColor], startPoint: .bottom, endPoint: .top))
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 16)
-                .shadow(color: .white.opacity(0.05), radius: 80, x: 0, y: 100)
-                .shadow(color: .white.opacity(0.07), radius: 10, x: 0, y: 12.5)
-        } else {
-            self
-                .background(LinearGradient(colors: [Color.white.opacity(0.7), Color.white.opacity(0.35)], startPoint: .bottom, endPoint: .top))
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 16)
-                .shadow(color: .black.opacity(0.1), radius: 80, x: 0, y: 100)
-                .shadow(color: .black.opacity(0.14), radius: 10, x: 0, y: 12.5)
-        }
+        self
+            .background(LinearGradient(colors: dark ? [drkColor, drkColor] : [Color.white.opacity(0.7), Color.white.opacity(0.35)], startPoint: .bottom, endPoint: .top))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .padding(.horizontal, 16)
+            .padding(.vertical, 16)
+            .shadow(color: dark ? .white.opacity(0.05) : .black.opacity(0.1), radius: 80, x: 0, y: 100)
+            .shadow(color: dark ? .white.opacity(0.07) : .black.opacity(0.14), radius: 10, x: 0, y: 12.5)
     }
     
     public func sectionTitle() -> some View {

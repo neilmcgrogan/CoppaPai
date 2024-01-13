@@ -10,3 +10,7 @@ import SwiftUI
 public enum GameStatus {
     case playing, notPlaying, finished
 }
+
+public enum WinStatus {
+    case notFinished, win, loss
+}
