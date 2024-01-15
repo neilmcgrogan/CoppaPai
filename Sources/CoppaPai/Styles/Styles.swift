@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 @available(iOS 16.0, *)
 let drkColor = Color(red: 46/255, green: 46/255, blue: 46/255)

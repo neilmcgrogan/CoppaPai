@@ -93,5 +93,5 @@ public struct AskForReview: View {
     AskForReview(title: "Loving _ game?", askFeedback: .constant(false))
         .background(Color.menuTitle)
         .previewLayout(PreviewLayout.sizeThatFits)
-        .colorScheme(.dark)
+        .colorScheme(.light)
 }

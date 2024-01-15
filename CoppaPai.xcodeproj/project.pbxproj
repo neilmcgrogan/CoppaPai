@@ -128,10 +128,10 @@
 		ADB2235B2AE86B0100FA3681 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				ADB2235C2AE86B0A00FA3681 /* Line.swift */,
 				ADB2235E2AE86B0E00FA3681 /* Styles.swift */,
-				AD4E110E2B3D91EB00CA1004 /* Confetti.swift */,
 				AD22C8CF2B0154F900DA3632 /* MenuViewStyle.swift */,
+				ADB2235C2AE86B0A00FA3681 /* Line.swift */,
+				AD4E110E2B3D91EB00CA1004 /* Confetti.swift */,
 				ADB223602AE86B1100FA3681 /* Spring.swift */,
 				ADB223622AE86B1500FA3681 /* Shake.swift */,
 				ADB223642AE86B1A00FA3681 /* Shine.swift */,

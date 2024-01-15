@@ -15,6 +15,37 @@ extension View {
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
     }
+    
+    public func gameMenuViewStyle() -> some View {
+        self
+            .background(BlurView(style: .systemMaterial))
+            .clipShape(RoundedRectangle(cornerRadius: 2, style: .continuous))
+            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
+    }
+}
+
+@available(iOS 14.0, *)
+#Preview {
+    ZStack {
+        VStack {
+            Text("Hello")
+            Spacer()
+            Text("Hello")
+        }
+        
+        VStack {
+            HStack(spacing: 175) {
+                Text("Settings")
+                Image(systemName: "xmark")
+            }
+                
+            Text("Hello")
+                .padding(100)
+        }
+        .padding()
+        .gameMenuViewStyle()
+    }
+    .colorScheme(.light)
 }
 
 @available(iOS 13.0, *)
