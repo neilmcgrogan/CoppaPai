@@ -52,7 +52,7 @@ public struct HelpView: View {
         }
         .fontWeight(.light)
         .padding()
-        .menuViewStyle()
+        .gameMenuViewStyle()
         .padding()
     }
 }
