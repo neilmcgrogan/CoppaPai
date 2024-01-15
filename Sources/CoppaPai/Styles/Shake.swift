@@ -98,6 +98,12 @@ public struct SimpleShake: GeometryEffect {
     public var shakesPerUnit = 2
     public var animatableData: CGFloat
 
+    public init(amount: CGFloat, shakesPerUnit: Int, animatableData: CGFloat) {
+        self.amount = amount
+        self.shakesPerUnit = shakesPerUnit
+        self.animatableData = animatableData
+    }
+    
     public func effectValue(size: CGSize) -> ProjectionTransform {
         ProjectionTransform(CGAffineTransform(translationX:
             amount * sin(animatableData * .pi * CGFloat(shakesPerUnit)),
