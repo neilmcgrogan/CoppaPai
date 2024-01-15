@@ -24,16 +24,20 @@ public struct HelpView: View {
                     self.showHelp = false
                 }
             }) {
-                HStack {
+                ZStack {
                     Text("How to Play")
-                        .bold()
-                    Spacer()
-                    Image(systemName: "xmark.circle")
-                        .foregroundColor(.gray)
                         .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    
+                    Image(systemName: "xmark")
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                .font(.title)
             }
+            .font(.title)
+            .foregroundColor(Color.primary)
+            
+            Divider()
             
             ScrollView {
                 VStack(alignment: .leading) {
