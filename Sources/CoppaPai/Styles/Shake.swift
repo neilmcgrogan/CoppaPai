@@ -98,9 +98,7 @@ public struct SimpleShake: GeometryEffect {
     public var shakesPerUnit = 2
     public var animatableData: CGFloat
 
-    public init(amount: CGFloat, shakesPerUnit: Int, animatableData: CGFloat) {
-        self.amount = amount
-        self.shakesPerUnit = shakesPerUnit
+    public init(animatableData: CGFloat) {
         self.animatableData = animatableData
     }
     
