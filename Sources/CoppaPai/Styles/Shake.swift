@@ -91,3 +91,16 @@ extension View {
         }
     }
 }
+
+@available(iOS 14.0, *)
+public struct SimpleShake: GeometryEffect {
+    public var amount: CGFloat = 5
+    public var shakesPerUnit = 2
+    public var animatableData: CGFloat
+
+    public func effectValue(size: CGSize) -> ProjectionTransform {
+        ProjectionTransform(CGAffineTransform(translationX:
+            amount * sin(animatableData * .pi * CGFloat(shakesPerUnit)),
+            y: 0))
+    }
+}
