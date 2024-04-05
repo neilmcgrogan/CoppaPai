@@ -66,9 +66,8 @@ extension View {
     public func titleButton() -> some View {
         self
             .font(.title)
-            .shadow(radius: 5)
             .foregroundColor(Color.primary)
-            .padding(.horizontal)
+            .padding(.horizontal, 5)
     }
 }
 
