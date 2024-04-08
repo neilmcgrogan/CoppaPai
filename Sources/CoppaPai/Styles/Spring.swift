@@ -41,6 +41,7 @@ struct SpringView: View {
                     .blendMode(.colorDodge)
             } else {
                 Rectangle()
+                    .opacity(0.00)
             }
         }
         /// Only animates once
