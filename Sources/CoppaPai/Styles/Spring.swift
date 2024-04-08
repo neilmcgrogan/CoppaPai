@@ -98,7 +98,6 @@ struct SpringCard: ViewModifier {
                 }
         } else {
             content
-                .opacity(0.00)
         }
     }
 }
@@ -108,4 +107,22 @@ extension View {
     public func springEffect(animationTrigger: Bool) -> some View {
         self.modifier(SpringCard(animateTrigger: animationTrigger))
     }
+}
+
+@available(iOS 13.0, *)
+struct SpringEffectTestView: View {
+    var body: some View {
+        VStack {
+            Text("hello world")
+            
+            
+            Text("hello world")
+                .springEffect(animationTrigger: false)
+        }
+    }
+}
+
+@available(iOS 13.0, *)
+#Preview {
+    SpringEffectTestView()
 }
