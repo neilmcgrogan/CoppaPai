@@ -27,7 +27,7 @@ struct LapalaRestartView: View {
                 Image(systemName: "play.fill")
                     .font(.largeTitle)
                     .padding(35)
-                    .springEffect(animationTrigger: .constant(true))
+                    .springEffect(animationTrigger: true)
                     .foregroundColor(Color.black)
             }
             Button(action: {

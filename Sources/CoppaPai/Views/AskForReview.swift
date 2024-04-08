@@ -74,7 +74,7 @@ public struct AskForReview: View {
                             .padding(.horizontal, 30)
                             .padding(1)
                             .background(Color.green.cornerRadius(30))
-                            .springEffect(animationTrigger: .constant(true))
+                            .springEffect(animationTrigger: true)
                             .frame(maxWidth: .infinity)
                     }.buttonStyle(ScaleButton())
                 }

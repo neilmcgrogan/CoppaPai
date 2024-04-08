@@ -32,12 +32,16 @@ struct SpringView: View {
             let fullHeight = ((geometry.size.height / 2) / (sin((.pi / 2) - angleRadians))) * 2 + 40
             let offset = (fullHeight / 2) * tan(angleRadians)
             
-            Rectangle()
-                .fill(Color.clear.opacity(oppacity))
-                .frame(width: glareWidth, height: fullHeight)
-                .rotationEffect(Angle(radians: angleRadians), anchor: .center)
-                .offset(x: animation ? geometry.size.width + offset : -glareWidth - offset, y: -20)
-                .blendMode(.colorDodge)
+            if animateTrigger {
+                Rectangle()
+                    .fill(Color.clear.opacity(oppacity))
+                    .frame(width: glareWidth, height: fullHeight)
+                    .rotationEffect(Angle(radians: angleRadians), anchor: .center)
+                    .offset(x: animation ? geometry.size.width + offset : -glareWidth - offset, y: -20)
+                    .blendMode(.colorDodge)
+            } else {
+                Rectangle()
+            }
         }
         /// Only animates once
         .onAppear() {
@@ -59,15 +63,12 @@ struct SpringView: View {
 
 @available(iOS 13.0, *)
 struct SpringCard: ViewModifier {
-    
-    @Binding var animateTrigger: Bool
-    
     @State private var glareTrigger = false
     @State private var cardAngle = 0.0
+    @State private var step = 0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
-    @State private var step = 0
+    let animateTrigger: Bool
     
     func startAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
@@ -105,7 +106,7 @@ struct SpringCard: ViewModifier {
 
 @available(iOS 13.0, *)
 extension View {
-    public func springEffect(animationTrigger: Binding<Bool>) -> some View {
+    public func springEffect(animationTrigger: Bool) -> some View {
         self.modifier(SpringCard(animateTrigger: animationTrigger))
     }
 }
