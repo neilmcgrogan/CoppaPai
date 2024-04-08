@@ -9,8 +9,6 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 struct SpringView: View {
-    
-    @Binding var animateTrigger: Bool
     @State private var animation = false
     
     let angle = 10.0
@@ -32,17 +30,12 @@ struct SpringView: View {
             let fullHeight = ((geometry.size.height / 2) / (sin((.pi / 2) - angleRadians))) * 2 + 40
             let offset = (fullHeight / 2) * tan(angleRadians)
             
-            if animateTrigger {
-                Rectangle()
-                    .fill(Color.clear.opacity(oppacity))
-                    .frame(width: glareWidth, height: fullHeight)
-                    .rotationEffect(Angle(radians: angleRadians), anchor: .center)
-                    .offset(x: animation ? geometry.size.width + offset : -glareWidth - offset, y: -20)
-                    .blendMode(.colorDodge)
-            } else {
-                Rectangle()
-                    .opacity(0.00)
-            }
+            Rectangle()
+                .fill(Color.clear.opacity(oppacity))
+                .frame(width: glareWidth, height: fullHeight)
+                .rotationEffect(Angle(radians: angleRadians), anchor: .center)
+                .offset(x: animation ? geometry.size.width + offset : -glareWidth - offset, y: -20)
+                .blendMode(.colorDodge)
         }
         /// Only animates once
         .onAppear() {
@@ -90,18 +83,23 @@ struct SpringCard: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        content
-            .overlay(
-                SpringView(animateTrigger: $glareTrigger)
-            )
-            .clipped()
-            .rotation3DEffect(.degrees(cardAngle), axis: (x: 0, y: -1, z: 0))
-            .onReceive(timer) { _ in
-                step += 1
-                if step % 3 == 0 || step == 0 {
-                    startAnimation()
+        if animateTrigger {
+            content
+                .overlay(
+                    SpringView()
+                )
+                .clipped()
+                .rotation3DEffect(.degrees(cardAngle), axis: (x: 0, y: -1, z: 0))
+                .onReceive(timer) { _ in
+                    step += 1
+                    if step % 3 == 0 || step == 0 {
+                        startAnimation()
+                    }
                 }
-            }
+        } else {
+            content
+                .opacity(0.00)
+        }
     }
 }
 
