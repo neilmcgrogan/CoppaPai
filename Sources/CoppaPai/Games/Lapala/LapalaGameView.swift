@@ -63,7 +63,7 @@ extension LapalaGameView {
             .opacity(game.incorrectGuess ? 1.0 : 0.0)
             .transition(.opacity)
     }
-
+    
     private var titleSection: some View {
         VStack(spacing: 0) {
             Text(" \(game.guess) ")

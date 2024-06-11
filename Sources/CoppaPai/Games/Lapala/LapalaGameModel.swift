@@ -75,11 +75,131 @@ public class LapalaGameModel: ObservableObject {
     
     public init() {
         
-        print("working")
         self.winStreak = defaults.object(forKey: "winStreak") as? Int ?? 0
         self.gamesPlayed = defaults.object(forKey: "games_played") as? Int ?? 0
         
         self.getLetters()
+    }
+    
+    /// Gets letters to be laoded onto the board
+    private func getLetters() {
+        self.char.removeAll()
+        
+        if let path = Bundle.main.path(forResource: "words_all", ofType: "txt") {
+            do {
+                // Read the contents of the file into a single string
+                let content = try String(contentsOfFile: path, encoding: .utf8)
+                
+                // Split the content by newline to get an array of lines
+                let lines = content.components(separatedBy: .newlines)
+                
+                // Filter out any empty lines and create an array of words
+                let words = lines.filter { !$0.isEmpty }
+                
+                while true {
+                    var foundPair: (String, String)? = nil
+
+                    while foundPair == nil {
+                        foundPair = findPairWithTwelveUniqueLetters(from: words)
+                    }
+                    
+                    if let pair = foundPair {
+                        print("Found pair: \(pair.0) and \(pair.1)")
+                    }
+                    
+                    let foundWordCombo = [foundPair?.0 ?? "", foundPair?.1 ?? ""]
+                    
+                    // Input data
+                    let inputString = functionalFlow(strs: foundWordCombo)
+                    let characters = strippedDownList(strs: foundWordCombo)
+                    let adjacencyList = findAdjacentCharacters(in: inputString)
+                    
+                    print("Input string: \(inputString)")
+                    print("Characters: \(characters)")
+                    print("Adjacency list: \(adjacencyList)")
+                    
+                    func solve() -> [[Character]]? {
+                        // We will perform a recursive backtracking to find a valid solution
+                        var sides: [[Character]] = Array(repeating: [], count: 4)
+                        var used: Set<Character> = []
+                        
+                        func canPlace(_ char: Character, in side: [Character]) -> Bool {
+                            for sChar in side {
+                                if adjacencyList[char]?.contains(sChar) == true {
+                                    return false
+                                }
+                            }
+                            return true
+                        }
+                        
+                        func backtrack(_ index: Int) -> Bool {
+                            if index == 12 { // We need to place all 12 characters
+                                return true
+                            }
+                            let sideIndex = index / 3
+                            for (char, _) in adjacencyList {
+                                if !used.contains(char) && canPlace(char, in: sides[sideIndex]) {
+                                    used.insert(char)
+                                    sides[sideIndex].append(char)
+                                    if backtrack(index + 1) {
+                                        return true
+                                    }
+                                    sides[sideIndex].removeLast()
+                                    used.remove(char)
+                                }
+                            }
+                            return false
+                        }
+                        
+                        if backtrack(0) {
+                            return sides
+                        } else {
+                            return nil
+                        }
+                    }
+
+                    if let solution = solve() {
+                        for (sideIndex, side) in solution.enumerated() {
+                            print("Side \(sideIndex + 1): \(side)")
+                            char.append(String(side[0]).uppercased())
+                            char.append(String(side[1]).uppercased())
+                            char.append(String(side[2]).uppercased())
+                        }
+                        break
+                    } else {
+                        print("No solution found.")
+                    }
+                }
+                
+            } catch {
+                print(error)
+            }
+        }
+        
+        // place so it is not broken
+        if char.isEmpty {
+            var vowel = vowels.shuffled()
+            var consonant = consonants.shuffled()
+            
+            let vowelAmount = Int.random(in: 4...5)
+            
+            for _ in 1...vowelAmount {
+                char.append(vowel.last ?? "_")
+                vowel.removeLast()
+            }
+            for _ in 1...(12-vowelAmount) {
+                char.append(consonant.last ?? "_")
+                consonant.removeLast()
+            }
+            char.shuffle()
+            if char.contains("Q") {
+                print("run a check now!")
+                if !char.contains("U") {
+                    print("Fix now")
+                    char[1] = "U"
+                }
+            }
+        }
     }
     
     func gameRestart() {
@@ -178,33 +298,6 @@ public class LapalaGameModel: ObservableObject {
         return points
     }
     
-    /// Gets letters to be laoded onto the board
-    private func getLetters() {
-        self.char.removeAll()
-        
-        var vowel = vowels.shuffled()
-        var consonant = consonants.shuffled()
-        
-        let vowelAmount = Int.random(in: 4...5)
-        
-        for _ in 1...vowelAmount {
-            char.append(vowel.last ?? "_")
-            vowel.removeLast()
-        }
-        for _ in 1...(12-vowelAmount) {
-            char.append(consonant.last ?? "_")
-            consonant.removeLast()
-        }
-        char.shuffle()
-        if char.contains("Q") {
-            print("run a check now!")
-            if !char.contains("U") {
-                print("Fix now")
-                char[1] = "U"
-            }
-        }
-    }
-    
     func containsLetter(letter: String) -> Bool {
         if guess.contains(letter) {
             return true
@@ -250,3 +343,145 @@ public class LapalaGameModel: ObservableObject {
     let vowels = ["A", "E", "I", "O", "U", "Y"]
     let consonants = ["B", "C", "D", "F", "G", "H", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W", "Z"]//["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
  }
+
+
+/*
+ {
+     self.char.removeAll()
+     
+     let combinationOfWords = ["barbecued", "disowned"] // ["cranberry", "soda", "tacos", "barbecued", "disowned"] // ["barbecued", "disowned"] //
+     /*
+     var foundPair: (String, String)? = nil
+
+     while foundPair == nil {
+         foundPair = findPairWithTwelveUniqueLetters(from: combinationOfWords)
+     }
+
+     if let pair = foundPair {
+         print("Found pair: \(pair.0) and \(pair.1)")
+     }
+     */
+     
+     // Input data
+     let inputString = functionalFlow(strs: combinationOfWords)
+     let characters = strippedDownList(strs: combinationOfWords)
+     let adjacencyList = findAdjacentCharacters(in: inputString)
+     
+     print("Input string: \(inputString)")
+     print("Characters: \(characters)")
+     print("Adjacency list: \(adjacencyList)")
+     
+     func solve() -> [[Character]]? {
+         // We will perform a recursive backtracking to find a valid solution
+         var sides: [[Character]] = Array(repeating: [], count: 4)
+         var used: Set<Character> = []
+         
+         func canPlace(_ char: Character, in side: [Character]) -> Bool {
+             for sChar in side {
+                 if adjacencyList[char]?.contains(sChar) == true {
+                     return false
+                 }
+             }
+             return true
+         }
+         
+         func backtrack(_ index: Int) -> Bool {
+             if index == 12 { // We need to place all 12 characters
+                 return true
+             }
+             let sideIndex = index / 3
+             for (char, _) in adjacencyList {
+                 if !used.contains(char) && canPlace(char, in: sides[sideIndex]) {
+                     used.insert(char)
+                     sides[sideIndex].append(char)
+                     if backtrack(index + 1) {
+                         return true
+                     }
+                     sides[sideIndex].removeLast()
+                     used.remove(char)
+                 }
+             }
+             return false
+         }
+         
+         if backtrack(0) {
+             return sides
+         } else {
+             return nil
+         }
+     }
+
+     if let solution = solve() {
+         for (sideIndex, side) in solution.enumerated() {
+             print("Side \(sideIndex + 1): \(side)")
+             char.append(String(side[0]))
+             char.append(String(side[1]))
+             char.append(String(side[2]))
+         }
+     } else {
+         print("No solution found.")
+     }
+     
+    /*
+     while true {
+         // Find a pair of words with 12 unique letters
+         var foundPair: (String, String)? = nil
+
+         while foundPair == nil {
+             foundPair = findPairWithTwelveUniqueLetters(from: combinationOfWords)
+         }
+
+         if let pair = foundPair {
+             print("Found pair: \(pair.0) and \(pair.1)")
+         }
+         
+         //let inputtableString = String(foundPair?.0 ?? "") + String(foundPair?.1 ?? "")
+         
+         // Input data
+         let inputString = functionalFlow(strs: ["barbecued", "disowned"])
+         let characters = strippedDownList(strs: ["barbecued", "disowned"])
+         let adjacencyList = findAdjacentCharacters(in: inputString)
+         
+         print(adjacencyList)
+         var sides = [[Character]](repeating: [], count: 4)
+         
+         if distributeCharacters(characters.map { Character(extendedGraphemeClusterLiteral: $0) }, adjacencyList: adjacencyList, sides: &sides, index: 0) {
+             for (index, side) in sides.enumerated() {
+                 print("Side \(index + 1): \(side)")
+             }
+             break
+         } else {
+             print("Unable to distribute characters into 4 sides with 3 characters each without adjacent constraints. Restarting...")
+         }
+         break
+     }
+     */
+     
+     /* End here */
+     
+     // place so it is not broken
+     if char.isEmpty {
+         var vowel = vowels.shuffled()
+         var consonant = consonants.shuffled()
+         
+         let vowelAmount = Int.random(in: 4...5)
+         
+         for _ in 1...vowelAmount {
+             char.append(vowel.last ?? "_")
+             vowel.removeLast()
+         }
+         for _ in 1...(12-vowelAmount) {
+             char.append(consonant.last ?? "_")
+             consonant.removeLast()
+         }
+         char.shuffle()
+         if char.contains("Q") {
+             print("run a check now!")
+             if !char.contains("U") {
+                 print("Fix now")
+                 char[1] = "U"
+             }
+         }
+     }
+ }
+ */
