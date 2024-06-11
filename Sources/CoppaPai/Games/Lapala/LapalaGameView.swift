@@ -16,6 +16,7 @@ public struct LapalaGameView: View {
     @Binding public var askFeedback: Bool
     
     @State private var viewState = CGSize.zero
+    @State private var results = true
     
     public init(askFeedback: Binding<Bool>) {
         self._askFeedback = askFeedback
@@ -37,12 +38,31 @@ public struct LapalaGameView: View {
                 
                 alertsSection
                 
-                LapalaRestartView(game: game)
+                LapalaEndView(game: game, results: $results)
                     .background(Color.black.opacity(0.001))
                     .offset(y: game.status == .finished ? 0 : 2*localHeight)
                     .offset(y: viewState.height)
                     .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: game.status == .finished)
                     .foregroundColor(.black)
+                
+                    .offset(y: results ? 0 : 2*localHeight)
+                    .offset(y: viewState.height)
+                    .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: results)
+                    .onTapGesture {
+                        withAnimation() { self.results.toggle() }
+                    }
+                    .gesture(
+                        DragGesture().onChanged { value in
+                            self.viewState = value.translation
+                        }
+                        .onEnded { value in
+                            if self.viewState.height > 50 {
+                                self.results = false
+                            }
+                            self.viewState = .zero
+                        }
+                    )
+                
             }
         }
         .bold()
@@ -86,6 +106,14 @@ extension LapalaGameView {
             
             Spacer()
             
+            Button(action: {
+                self.results.toggle()
+            }) {
+                Text("Results")
+                    .button(selectable: true)
+            }
+            .scaleEffect(game.status == .finished && !results ? 1 : 0)
+            
             HStack(spacing: 20) {
                 Button(action: {
                     game.restart()
@@ -110,12 +138,12 @@ extension LapalaGameView {
             }
             .font(.body)
             .foregroundColor(.black)
+            .scaleEffect(game.status == .finished ? 0 : 1)
             
             ProgressView("", value: game.progress, total: 1)
                 .accentColor(Color.black)
                 .frame(width: localWidth * 0.75)
         }
-        .scaleEffect(game.status == .finished ? 0 : 1)
     }
     
     private var wordsSection: some View {

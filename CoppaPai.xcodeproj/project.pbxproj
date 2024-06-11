@@ -23,7 +23,7 @@
 /* Begin PBXBuildFile section */
 		AD22C8D02B0154F900DA3632 /* MenuViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD22C8CF2B0154F900DA3632 /* MenuViewStyle.swift */; };
 		AD3ED2182AE9CF8A00997035 /* LapalaGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */; };
-		AD3ED2202AE9D8EC00997035 /* LapalaRestartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED21F2AE9D8EC00997035 /* LapalaRestartView.swift */; };
+		AD3ED2202AE9D8EC00997035 /* LapalaEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED21F2AE9D8EC00997035 /* LapalaEndView.swift */; };
 		AD3ED2222AE9D90000997035 /* LapalaTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED2212AE9D90000997035 /* LapalaTitleView.swift */; };
 		AD485DE22B14223A0047CAE8 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD485DE12B14223A0047CAE8 /* GameStatus.swift */; };
 		AD485DEA2B1462D60047CAE8 /* DeviceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD485DE92B1462D60047CAE8 /* DeviceDetection.swift */; };
@@ -69,7 +69,7 @@
 /* Begin PBXFileReference section */
 		AD22C8CF2B0154F900DA3632 /* MenuViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewStyle.swift; sourceTree = "<group>"; };
 		AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaGameModel.swift; sourceTree = "<group>"; };
-		AD3ED21F2AE9D8EC00997035 /* LapalaRestartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaRestartView.swift; sourceTree = "<group>"; };
+		AD3ED21F2AE9D8EC00997035 /* LapalaEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaEndView.swift; sourceTree = "<group>"; };
 		AD3ED2212AE9D90000997035 /* LapalaTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaTitleView.swift; sourceTree = "<group>"; };
 		AD485DE12B14223A0047CAE8 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		AD485DE92B1462D60047CAE8 /* DeviceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetection.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */,
 				ADF6B72B2C17BC2700D5D4FB /* LapalaGameModelHelper.swift */,
 				ADB223712AE8715E00FA3681 /* LapalaGameView.swift */,
-				AD3ED21F2AE9D8EC00997035 /* LapalaRestartView.swift */,
+				AD3ED21F2AE9D8EC00997035 /* LapalaEndView.swift */,
 				AD3ED2212AE9D90000997035 /* LapalaTitleView.swift */,
 				AD485DE12B14223A0047CAE8 /* GameStatus.swift */,
 			);
@@ -297,7 +297,7 @@
 				ADB2235F2AE86B0E00FA3681 /* Styles.swift in Sources */,
 				OBJ_24 /* CoppaPai.swift in Sources */,
 				AD934D8C2B2A8B730080A354 /* Haptic.swift in Sources */,
-				AD3ED2202AE9D8EC00997035 /* LapalaRestartView.swift in Sources */,
+				AD3ED2202AE9D8EC00997035 /* LapalaEndView.swift in Sources */,
 				AD3ED2182AE9CF8A00997035 /* LapalaGameModel.swift in Sources */,
 				ADF6B72C2C17BC2700D5D4FB /* LapalaGameModelHelper.swift in Sources */,
 				AD4E110F2B3D91EB00CA1004 /* Confetti.swift in Sources */,

@@ -52,7 +52,7 @@ public class LapalaGameModel: ObservableObject {
             }
         }
     }
-    @Published public var status: GameStatus = .notPlaying
+    @Published public var status: GameStatus = .finished
     @Published var progress: Double = 0
     @Published var winStreak: Int {
         didSet {
