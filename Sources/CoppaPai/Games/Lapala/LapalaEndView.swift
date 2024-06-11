@@ -30,9 +30,8 @@ struct LapalaEndView: View {
                 .bold()
             }
             
-            Text("Puzzle solved in \(game.words.count) words.\nNext time try in \(game.words.count-1)!")
+            Text("**Puzzle solved in \(game.words.count) words.**\n(Every puzzle is solvable in 2 words!)")
                 .font(.subheadline)
-                .foregroundStyle(Color.dark_gray)
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
             
@@ -43,9 +42,11 @@ struct LapalaEndView: View {
             }) {
                 Text("Play again")
                     .font(.title)
+                    .padding(.horizontal, 15)
                     .button(selectable: true)
             }
             .padding()
+            .springEffect(animationTrigger: true)
         }
         .padding()
         .background(Color.primary_pink)
@@ -71,7 +72,7 @@ struct LapalaEndView: View {
                             from: CGPoint(x: ((geo.size.width / 2) * pathResult.0.x), y: ((geo.size.height / 2) * pathResult.0.y)),
                             to: CGPoint(x: ((geo.size.width / 2) * pathResult.1.x), y: ((geo.size.height / 2) * pathResult.1.y))
                         )
-                        .stroke(Color.primary_pink.opacity(0.2), style: StrokeStyle(lineWidth: 3))
+                        .stroke(Color.black.opacity(0.5), style: StrokeStyle(lineWidth: 3))
                     }
                 }
             }
