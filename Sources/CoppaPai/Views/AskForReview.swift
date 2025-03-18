@@ -19,72 +19,75 @@ public struct AskForReview: View {
     }
     
     public var body: some View {
-        ZStack {
-            Color.gray.opacity(0.01)
+        VStack {
+            Image("Wreath")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity)
+                .overlay(
+                    Text(title)
+                        .font(.title)
+                        .bold()
+                )
             
-            VStack(spacing: 20) {
-                Text(title)
-                    .bold()
-                    .font(.title)
-                HStack {
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 22.5, height: 22.5)
-                        .offset(y: -2.5)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .offset(y: -5)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 22.5, height: 22.5)
-                        .offset(y: -2.5)
-                    Image("star")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                
-                Text("Help us with a review")
-                    .bold()
-                    .font(.body)
-                Spacer()
-                HStack {
-                    Button(action: {
-                        askFeedback.toggle()
-                    }) {
-                        Text("No")
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 30)
-                            .menuViewStyle()
-                            .padding(1)
-                            .background(Color.gray.cornerRadius(30))
-                            .frame(maxWidth: .infinity)
-                    }.buttonStyle(ScaleButton())
-                    
-                    Button(action: {
-                        storeReview.requestReview()
-                        askFeedback.toggle()
-                    }) {
-                        Text("Yes")
-                            .fontWeight(.medium)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 30)
-                            .padding(1)
-                            .background(Color.green.cornerRadius(30))
-                            .springEffect(animationTrigger: true)
-                            .frame(maxWidth: .infinity)
-                    }.buttonStyle(ScaleButton())
-                }
-                .font(.title2)
+            Spacer()
+            
+            HStack {
+                Image("star")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                Image("star")
+                    .resizable()
+                    .frame(width: 27.5, height: 27.5)
+                    .offset(y: -5.0)
+                Image("star")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .offset(y: -7.5)
+                Image("star")
+                    .resizable()
+                    .frame(width: 27.5, height: 27.5)
+                    .offset(y: -5.0)
+                Image("star")
+                    .resizable()
+                    .frame(width: 25, height: 25)
             }
-            .padding()
-            .frame(width: 285, height: 285)
-            .menuViewStyle()
+            
+            Text("Help us with a review")
+                .font(.headline)
+            
+            Spacer()
+            
+            HStack {
+                Button(action: {
+                    askFeedback.toggle()
+                }) {
+                    Text("No")
+                        .padding(.vertical, 15)
+                        .padding(.horizontal, 45)
+                        .menuViewStyle()
+                        .padding(1)
+                        .background(Color.gray.cornerRadius(30))
+                        .frame(maxWidth: .infinity)
+                }.buttonStyle(ScaleButton())
+                
+                Button(action: {
+                    storeReview.requestReview()
+                    askFeedback.toggle()
+                }) {
+                    Text("Yes")
+                        .fontWeight(.medium)
+                        .padding(.vertical, 15)
+                        .padding(.horizontal, 45)
+                        .padding(1)
+                        .background(Color.green.cornerRadius(30))
+                        .springEffect(animationTrigger: true)
+                        .frame(maxWidth: .infinity)
+                }.buttonStyle(ScaleButton())
+            }
+            .font(.title2)
         }
-        .transition(.opacity)
+        .padding(15)
     }
 }
 
