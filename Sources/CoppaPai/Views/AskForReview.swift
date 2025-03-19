@@ -18,9 +18,11 @@ public struct AskForReview: View {
         self._askFeedback = askFeedback
     }
     
+    @Environment(\.colorScheme) var colorScheme
+    
     public var body: some View {
         VStack {
-            Image("Wreath")
+            Image(colorScheme == .light ? "Black_Wreath" : "Wreath")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity)
@@ -86,6 +88,7 @@ public struct AskForReview: View {
                 }.buttonStyle(ScaleButton())
             }
             .font(.title2)
+            .foregroundStyle(Color.black)
         }
         .padding(15)
     }
