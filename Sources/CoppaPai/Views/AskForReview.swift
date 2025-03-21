@@ -67,7 +67,6 @@ public struct AskForReview: View {
                     Text("No")
                         .padding(.vertical, 15)
                         .padding(.horizontal, 45)
-                        .menuViewStyle()
                         .padding(1)
                         .background(Color.gray.cornerRadius(30))
                         .frame(maxWidth: .infinity)
@@ -88,7 +87,6 @@ public struct AskForReview: View {
                 }.buttonStyle(ScaleButton())
             }
             .font(.title2)
-            .foregroundStyle(Color.black)
         }
         .padding(15)
     }
