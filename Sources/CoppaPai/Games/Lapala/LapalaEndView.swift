@@ -45,8 +45,15 @@ struct LapalaEndView: View {
             }) {
                 Text("Play again")
                     .font(.title)
-                    .padding(.horizontal, 15)
-                    .button(selectable: true)
+                    .foregroundColor(Color.black)
+                    .padding(.vertical, 20)
+                    .frame(maxWidth: width)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(Color.white)
+                    )
+                    .springEffect(animationTrigger: true)
+                
             }
             .padding()
             .springEffect(animationTrigger: true)
@@ -79,7 +86,7 @@ struct LapalaEndView: View {
             }
         }
         .padding(25)
-        .frame(width: localWidth * 0.25, height: localWidth * 0.25)
+        .frame(width: localWidth * 0.45, height: localWidth * 0.45)
         .scaleEffect(game.scoreAnimation ? 0.95 : 1.0)
         .transition(.scale)
     }

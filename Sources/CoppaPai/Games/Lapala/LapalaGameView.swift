@@ -39,11 +39,10 @@ public struct LapalaGameView: View {
                 alertsSection
                 
                 LapalaEndView(game: game, results: $results)
-                    .background(Color.black.opacity(0.001))
+                    .foregroundColor(.black)
                     .offset(y: game.status == .finished ? 0 : 2*localHeight)
                     .offset(y: viewState.height)
                     .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: game.status == .finished)
-                    .foregroundColor(.black)
                 
                     .offset(y: results ? 0 : 2*localHeight)
                     .offset(y: viewState.height)
