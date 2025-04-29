@@ -20,14 +20,15 @@ struct LapalaEndView: View {
                     self.results.toggle()
                 }
             }) {
-                HStack(spacing: 50) {
+                HStack {
                     Text("Finished!")
-                    
+                    Spacer()
                     Image(systemName: "xmark")
+                        .font(.title3)
+                        .fontWeight(.black)
                 }
-                .padding(.horizontal, 16)
-                .font(.title)
                 .bold()
+                .font(.title)
             }
             
             Text("**Puzzle solved in \(game.words.count) words.**\n(Every puzzle is solvable in 2 words!)")
@@ -50,9 +51,6 @@ struct LapalaEndView: View {
         }
         .padding()
         .background(Color.primary_pink)
-        .gameMenuViewStyle()
-        .shadow(radius: 10)
-        .padding()
     }
     
     private var lineSection: some View {
