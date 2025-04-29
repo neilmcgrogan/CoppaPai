@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		AD0917CF2DC0751800156D74 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0917CE2DC0751800156D74 /* MailService.swift */; };
 		AD22C8D02B0154F900DA3632 /* MenuViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD22C8CF2B0154F900DA3632 /* MenuViewStyle.swift */; };
 		AD3ED2182AE9CF8A00997035 /* LapalaGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */; };
 		AD3ED2202AE9D8EC00997035 /* LapalaEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3ED21F2AE9D8EC00997035 /* LapalaEndView.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD0917CE2DC0751800156D74 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		AD22C8CF2B0154F900DA3632 /* MenuViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewStyle.swift; sourceTree = "<group>"; };
 		AD3ED2172AE9CF8A00997035 /* LapalaGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaGameModel.swift; sourceTree = "<group>"; };
 		AD3ED21F2AE9D8EC00997035 /* LapalaEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapalaEndView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				AD934D8B2B2A8B730080A354 /* Haptic.swift */,
 				ADFE435A2AD4DF9A00D55638 /* Definitions.swift */,
 				ADFE435C2AD4DFF100D55638 /* UserData.swift */,
+				AD0917CE2DC0751800156D74 /* MailService.swift */,
 				AD4E11122B3D999800CA1004 /* Views */,
 				ADB2236C2AE86CA400FA3681 /* Games */,
 				ADB2235B2AE86B0100FA3681 /* Styles */,
@@ -314,6 +317,7 @@
 				AD94663F2AD4CDFB00B98FD9 /* StoreReview.swift in Sources */,
 				ADB223612AE86B1100FA3681 /* Spring.swift in Sources */,
 				ADB223722AE8715E00FA3681 /* LapalaGameView.swift in Sources */,
+				AD0917CF2DC0751800156D74 /* MailService.swift in Sources */,
 				AD4E11142B3D99A000CA1004 /* HelpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
