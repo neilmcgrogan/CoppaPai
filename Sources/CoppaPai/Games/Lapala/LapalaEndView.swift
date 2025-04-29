@@ -38,6 +38,8 @@ struct LapalaEndView: View {
             
             lineSection
             
+            Spacer()
+            
             Button(action: {
                 game.gameRestart()
             }) {
@@ -48,6 +50,7 @@ struct LapalaEndView: View {
             }
             .padding()
             .springEffect(animationTrigger: true)
+            .padding(20)
         }
         .padding()
         .background(Color.primary_pink)
