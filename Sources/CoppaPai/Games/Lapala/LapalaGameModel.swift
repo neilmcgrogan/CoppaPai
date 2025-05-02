@@ -106,7 +106,11 @@ public class LapalaGameModel: ObservableObject {
                     }
                     
                     if let pair = foundPair {
-                        self.pair = pair
+                        if pair.0.last == pair.1.first {
+                            self.pair = pair
+                        } else {
+                            self.pair = (pair.1, pair.0)
+                        }
                     }
                     
                     let foundWordCombo = [foundPair?.0 ?? "", foundPair?.1 ?? ""]
