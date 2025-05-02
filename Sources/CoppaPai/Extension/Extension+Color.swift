@@ -15,9 +15,9 @@ extension Color {
     /*
      Default black color for all gaming applications
      */
-    static var softBlack: Color = Color(red:  25/255, green:  25/255, blue:  25/255)
+    public static var softBlack: Color = Color(red:  25/255, green:  25/255, blue:  25/255)
     /*
      Default white color for all gaming applications
      */
-    static var softWhite: Color = Color(red: 255/255, green: 255/255, blue: 255/255)
+    public static var softWhite: Color = Color(red: 255/255, green: 255/255, blue: 255/255)
 }
