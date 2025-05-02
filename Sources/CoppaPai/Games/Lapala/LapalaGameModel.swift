@@ -72,7 +72,7 @@ public class LapalaGameModel: ObservableObject {
         }
     }
     @Published var entered: Bool = false
-    @Published var pair: (String, String)? = ("", "")
+    @Published public var pair: (String, String)? = ("", "")
     
     public init() {
         
