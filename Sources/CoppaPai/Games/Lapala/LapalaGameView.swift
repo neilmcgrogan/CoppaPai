@@ -73,12 +73,12 @@ public struct LapalaGameView: View {
 extension LapalaGameView {
     private var alertsSection: some View {
         Text("Not in word bank")
-        
+            .foregroundStyle(Color.softWhite)
             .font(.title3)
             .padding(5)
             .background(
                 RoundedRectangle(cornerRadius: 15.0)
-                    .fill(Color.white)
+                    .fill(Color.softBlack)
             )
             .opacity(game.incorrectGuess ? 1.0 : 0.0)
             .transition(.opacity)
