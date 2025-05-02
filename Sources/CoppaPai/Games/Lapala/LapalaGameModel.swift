@@ -26,7 +26,7 @@ public class LapalaGameModel: ObservableObject {
     @Published var incorrectGuess: Bool = false {
         didSet{
             if incorrectGuess {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
                     self.incorrectGuess = false
                 }
             }
