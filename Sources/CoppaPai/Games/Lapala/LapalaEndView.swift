@@ -34,7 +34,17 @@ struct LapalaEndView: View {
             Text("**Puzzle solved in \(game.words.count) words.**\n(Every puzzle is solvable in 2 words!)")
                 .font(.subheadline)
                 .fontWeight(.light)
+            if let pair = game.pair {
+                VStack {
+                    Text("This puzzle is solvable in 2 words...")
+                        .font(.subheadline)
+                        .foregroundStyle(Color.gray)
+                    Text("\(pair.0), \(pair.1)")
+                        .foregroundStyle(Color.softBlack)
+                        .font(.headline)
+                }
                 .multilineTextAlignment(.center)
+            }
             
             lineSection
             
