@@ -73,6 +73,7 @@ public struct LapalaGameView: View {
 extension LapalaGameView {
     private var alertsSection: some View {
         Text("Not in word bank")
+        
             .font(.title3)
             .padding(5)
             .background(

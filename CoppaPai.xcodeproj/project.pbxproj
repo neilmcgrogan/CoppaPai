@@ -120,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0917DC2DC479AA00156D74 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ADB223682AE86B2300FA3681 /* Extension+String.swift */,
+				ADB2236A2AE86B2900FA3681 /* Extension+Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AD4E11122B3D999800CA1004 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +149,6 @@
 				ADB223622AE86B1500FA3681 /* Shake.swift */,
 				ADB223642AE86B1A00FA3681 /* Shine.swift */,
 				ADB223662AE86B1E00FA3681 /* AnimatingLine.swift */,
-				ADB223682AE86B2300FA3681 /* Extension+String.swift */,
-				ADB2236A2AE86B2900FA3681 /* Extension+Color.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				AD0917CE2DC0751800156D74 /* MailService.swift */,
 				AD4E11122B3D999800CA1004 /* Views */,
 				ADB2236C2AE86CA400FA3681 /* Games */,
+				AD0917DC2DC479AA00156D74 /* Extension */,
 				ADB2235B2AE86B0100FA3681 /* Styles */,
 			);
 			name = CoppaPai;
