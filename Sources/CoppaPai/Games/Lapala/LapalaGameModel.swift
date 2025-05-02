@@ -72,6 +72,7 @@ public class LapalaGameModel: ObservableObject {
         }
     }
     @Published var entered: Bool = false
+    @Published var pair: (String, String)? = ("", "")
     
     public init() {
         
@@ -84,6 +85,7 @@ public class LapalaGameModel: ObservableObject {
     /// Gets letters to be laoded onto the board
     private func getLetters() {
         self.char.removeAll()
+        self.pair = ("", "")
         
         if let path = Bundle.main.path(forResource: "words_all", ofType: "txt") {
             do {
@@ -104,7 +106,7 @@ public class LapalaGameModel: ObservableObject {
                     }
                     
                     if let pair = foundPair {
-                        print("Found pair: \(pair.0) and \(pair.1)")
+                        self.pair = pair
                     }
                     
                     let foundWordCombo = [foundPair?.0 ?? "", foundPair?.1 ?? ""]
