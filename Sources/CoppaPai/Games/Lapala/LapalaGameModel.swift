@@ -172,6 +172,7 @@ public class LapalaGameModel: ObservableObject {
 
                     if promotion {
                         char = ["H", "E", "S", "T", "P", "K", "A", "C", "I", "R", "N", "D"]
+                        break
                     } else {
                         if let solution = solve() {
                             for (sideIndex, side) in solution.enumerated() {
