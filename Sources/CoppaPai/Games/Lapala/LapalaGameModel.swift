@@ -87,6 +87,8 @@ public class LapalaGameModel: ObservableObject {
         self.char.removeAll()
         self.pair = ("", "")
         
+        let promotion: Bool = true
+        
         if let path = Bundle.main.path(forResource: "words_all", ofType: "txt") {
             do {
                 // Read the contents of the file into a single string
@@ -100,24 +102,14 @@ public class LapalaGameModel: ObservableObject {
                 
                 while true {
                     var foundPair: (String, String)? = nil
-
-                    /*
-                     For promotional material
-                     */
-                    /*
-                     
-                     */
-                    foundPair = ("sketchpads", "siren")
                     
-                    /*
-                     In production
-                     */
-                    /*
-                    while foundPair == nil {
-                        foundPair = findPairWithTwelveUniqueLetters(from: words)
+                    if promotion {
+                        foundPair = ("sketchpads", "siren")
+                    } else {
+                        while foundPair == nil {
+                            foundPair = findPairWithTwelveUniqueLetters(from: words)
+                        }
                     }
-                    */
-                    
                     
                     if let pair = foundPair {
                         if pair.0.last == pair.1.first {
@@ -178,19 +170,22 @@ public class LapalaGameModel: ObservableObject {
                         }
                     }
 
-                    if let solution = solve() {
-                        for (sideIndex, side) in solution.enumerated() {
-                            print("Side \(sideIndex + 1): \(side)")
-                            char.append(String(side[0]).uppercased())
-                            char.append(String(side[1]).uppercased())
-                            char.append(String(side[2]).uppercased())
-                        }
-                        break
+                    if promotion {
+                        char = ["H", "E", "S", "T", "P", "K", "A", "C", "I", "R", "N", "D"]
                     } else {
-                        print("No solution found.")
+                        if let solution = solve() {
+                            for (sideIndex, side) in solution.enumerated() {
+                                print("Side \(sideIndex + 1): \(side)")
+                                char.append(String(side[0]).uppercased())
+                                char.append(String(side[1]).uppercased())
+                                char.append(String(side[2]).uppercased())
+                            }
+                            break
+                        } else {
+                            print("No solution found.")
+                        }
                     }
                 }
-                
             } catch {
                 print(error)
             }
