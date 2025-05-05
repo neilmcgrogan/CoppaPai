@@ -101,9 +101,23 @@ public class LapalaGameModel: ObservableObject {
                 while true {
                     var foundPair: (String, String)? = nil
 
+                    /*
+                     For promotional material
+                     */
+                    /*
+                     
+                     */
+                    foundPair = ("sketchpads", "siren")
+                    
+                    /*
+                     In production
+                     */
+                    /*
                     while foundPair == nil {
                         foundPair = findPairWithTwelveUniqueLetters(from: words)
                     }
+                    */
+                    
                     
                     if let pair = foundPair {
                         if pair.0.last == pair.1.first {
