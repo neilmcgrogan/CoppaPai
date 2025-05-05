@@ -93,6 +93,10 @@ struct LapalaEndView: View {
             }
         }
         .padding(25)
+        .background(
+            RoundedRectangle(cornerRadius: 12.5)
+                .stroke(Color.black.opacity(0.5), style: StrokeStyle(lineWidth: 3))
+        )
         .frame(width: localWidth * 0.45, height: localWidth * 0.45)
         .scaleEffect(game.scoreAnimation ? 0.95 : 1.0)
         .transition(.scale)
