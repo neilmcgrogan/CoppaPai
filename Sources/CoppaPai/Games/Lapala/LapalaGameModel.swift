@@ -87,7 +87,7 @@ public class LapalaGameModel: ObservableObject {
         self.char.removeAll()
         self.pair = ("", "")
         
-        let promotion: Bool = true
+        let promotion: Bool = false // true // 
         
         if let path = Bundle.main.path(forResource: "words_all", ofType: "txt") {
             do {
