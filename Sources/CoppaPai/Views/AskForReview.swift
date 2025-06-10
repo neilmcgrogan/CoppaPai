@@ -30,6 +30,7 @@ public struct AskForReview: View {
                     Text(title)
                         .font(.title)
                         .bold()
+                        .multilineTextAlignment(.center)
                 )
             
             Spacer()
